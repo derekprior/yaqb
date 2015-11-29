@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `expression` mod in crate `yaqb`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, expression">
+
+    <title>yaqb::expression - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../index.html'>yaqb</a></p><script>window.sidebarCurrent = {name: 'expression', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content mod">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>yaqb</a>::<wbr><a class='mod' href=''>expression</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-4' class='srclink' href='../../src/yaqb/expression/mod.rs.html#1-157' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>AST types representing various typed SQL expressions. Almost all types
+implement either <a href="trait.Expression.html"><code>Expression</code></a> or
+<a href="trait.AsExpression.html"><code>AsExpression</code></a>.</p>
+
+<p>The most common expression to work with is a
+<a href="../query_source/trait.Column.html"><code>Column</code></a>. There are various methods
+that you can call on these, found in
+<a href="expression_methods/index.html"><code>expression_methods</code></a>, or operators which
+you can find in <a href="ops/index.html"><code>ops</code></a>.</p>
+
+<p>Any primitive which implements <a href="../types/trait.ToSql.html"><code>ToSql</code></a> will
+also implement <a href="trait.AsExpression.html"><code>AsExpression</code></a>, allowing it to be
+used as an argument to any of the methods described here.</p>
+</div><h2 id='reexports' class='section-header'><a href="#reexports">Reexports</a></h2>
+<table><tr><td><code>pub use self::<a class='mod' href='../../yaqb/expression/dsl/index.html' title='yaqb::expression::dsl'>dsl</a>::*;</code></td></tr><tr><td><code>pub use self::<a class='mod'
+                                            href='./sql_literal/index.html'>sql_literal</a>::<a class='struct' href='../../yaqb/expression/sql_literal/struct.SqlLiteral.html' title='yaqb::expression::sql_literal::SqlLiteral'>SqlLiteral</a>;</code></td></tr></table><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='aliased/index.html'
+                               title='yaqb::expression::aliased'>aliased</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='array_comparison/index.html'
+                               title='yaqb::expression::array_comparison'>array_comparison</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='bound/index.html'
+                               title='yaqb::expression::bound'>bound</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='count/index.html'
+                               title='yaqb::expression::count'>count</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='dsl/index.html'
+                               title='yaqb::expression::dsl'>dsl</a></td>
+                        <td class='docblock short'>
+                             <p>Reexports various top level functions and core extensions that are too
+generic to export by default. This module exists to conveniently glob import
+in functions where you need them.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='expression_methods/index.html'
+                               title='yaqb::expression::expression_methods'>expression_methods</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='extensions/index.html'
+                               title='yaqb::expression::extensions'>extensions</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='functions/index.html'
+                               title='yaqb::expression::functions'>functions</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='grouped/index.html'
+                               title='yaqb::expression::grouped'>grouped</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='helper_types/index.html'
+                               title='yaqb::expression::helper_types'>helper_types</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='max/index.html'
+                               title='yaqb::expression::max'>max</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='ops/index.html'
+                               title='yaqb::expression::ops'>ops</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='ordering/index.html'
+                               title='yaqb::expression::ordering'>ordering</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='predicates/index.html'
+                               title='yaqb::expression::predicates'>predicates</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='mod' href='sql_literal/index.html'
+                               title='yaqb::expression::sql_literal'>sql_literal</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                </table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.AsExpression.html'
+                               title='yaqb::expression::AsExpression'>AsExpression</a></td>
+                        <td class='docblock short'>
+                             <p>Describes how a type can be represented as an expression for a given type.
+These types couldn&#39;t just implement <a href="trait.Expression.html"><code>Expression</code></a>
+directly, as many things can be used as an expression of multiple types.
+(<code>String</code> for example, can be used as either
+<a href="../types/struct.VarChar.html"><code>VarChar</code></a> or
+<a href="../types/struct.Text.html"><code>Text</code></a>).</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.BoxableExpression.html'
+                               title='yaqb::expression::BoxableExpression'>BoxableExpression</a></td>
+                        <td class='docblock short'>
+                             <p>Helper trait used when boxing expressions. This exists to work around the
+fact that Rust will not let us use non-core types as bounds on a trait
+object (you could not return <code>Box&lt;Expression+NonAggregate&gt;</code>)</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.Expression.html'
+                               title='yaqb::expression::Expression'>Expression</a></td>
+                        <td class='docblock short'>
+                             
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.NonAggregate.html'
+                               title='yaqb::expression::NonAggregate'>NonAggregate</a></td>
+                        <td class='docblock short'>
+                             <p>Marker trait to indicate that an expression does not include any aggregate
+functions. Used to ensure that aggregate expressions aren&#39;t mixed with
+non-aggregate expressions in a select clause, and that they&#39;re never
+included in a where clause.</p>
+
+                        </td>
+                    </tr>
+                
+                    <tr class=' module-item'>
+                        <td><a class='trait' href='trait.SelectableExpression.html'
+                               title='yaqb::expression::SelectableExpression'>SelectableExpression</a></td>
+                        <td class='docblock short'>
+                             <p>Indicates that an expression can be selected from a source. The second type
+argument is optional, but is used to indicate that the right side of a left
+outer join is nullable, even if it wasn&#39;t before.</p>
+
+                        </td>
+                    </tr>
+                </table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "yaqb";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../jquery.js"></script>
+    <script src="../../main.js"></script>
+    
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `ExpressionMethods` trait in crate `yaqb`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, ExpressionMethods">
+
+    <title>yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../../index.html'>yaqb</a>::<wbr><a href='../../index.html'>expression</a>::<wbr><a href='../index.html'>expression_methods</a>::<wbr><a href='index.html'>global_expression_methods</a></p><script>window.sidebarCurrent = {name: 'ExpressionMethods', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content trait">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../../index.html'>yaqb</a>::<wbr><a href='../../index.html'>expression</a>::<wbr><a href='../index.html'>expression_methods</a>::<wbr><a href='index.html'>global_expression_methods</a>::<wbr><a class='trait' href=''>ExpressionMethods</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-465' class='srclink' href='../../../../src/yaqb/expression/expression_methods/global_expression_methods.rs.html#6-52' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait ExpressionMethods: <a class='trait' href='../../../../yaqb/expression/trait.Expression.html' title='yaqb::expression::Expression'>Expression</a> + <a class='trait' href='https://doc.rust-lang.org/nightly/core/marker/trait.Sized.html' title='core::marker::Sized'>Sized</a> {
+    fn <a href='#method.aliased' class='fnname'>aliased</a>&lt;'a&gt;(self, alias: &amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../../../../yaqb/expression/aliased/struct.Aliased.html' title='yaqb::expression::aliased::Aliased'>Aliased</a>&lt;'a, Self&gt; { ... }
+    fn <a href='#method.eq' class='fnname'>eq</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Eq.html' title='yaqb::expression::predicates::Eq'>Eq</a>&lt;Self, T::Expression&gt; { ... }
+    fn <a href='#method.ne' class='fnname'>ne</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.NotEq.html' title='yaqb::expression::predicates::NotEq'>NotEq</a>&lt;Self, T::Expression&gt; { ... }
+    fn <a href='#method.gt' class='fnname'>gt</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Gt.html' title='yaqb::expression::predicates::Gt'>Gt</a>&lt;Self, T::Expression&gt; { ... }
+    fn <a href='#method.ge' class='fnname'>ge</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.GtEq.html' title='yaqb::expression::predicates::GtEq'>GtEq</a>&lt;Self, T::Expression&gt; { ... }
+    fn <a href='#method.lt' class='fnname'>lt</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Lt.html' title='yaqb::expression::predicates::Lt'>Lt</a>&lt;Self, T::Expression&gt; { ... }
+    fn <a href='#method.le' class='fnname'>le</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.LtEq.html' title='yaqb::expression::predicates::LtEq'>LtEq</a>&lt;Self, T::Expression&gt; { ... }
+    fn <a href='#method.between' class='fnname'>between</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;T&gt;) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Between.html' title='yaqb::expression::predicates::Between'>Between</a>&lt;Self, <a class='struct' href='../../../../yaqb/expression/predicates/struct.And.html' title='yaqb::expression::predicates::And'>And</a>&lt;T::Expression, T::Expression&gt;&gt; { ... }
+    fn <a href='#method.not_between' class='fnname'>not_between</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;T&gt;) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.NotBetween.html' title='yaqb::expression::predicates::NotBetween'>NotBetween</a>&lt;Self, <a class='struct' href='../../../../yaqb/expression/predicates/struct.And.html' title='yaqb::expression::predicates::And'>And</a>&lt;T::Expression, T::Expression&gt;&gt; { ... }
+    fn <a href='#method.desc' class='fnname'>desc</a>(self) -&gt; <a class='struct' href='../../../../yaqb/expression/ordering/struct.Desc.html' title='yaqb::expression::ordering::Desc'>Desc</a>&lt;Self&gt; { ... }
+    fn <a href='#method.asc' class='fnname'>asc</a>(self) -&gt; <a class='struct' href='../../../../yaqb/expression/ordering/struct.Asc.html' title='yaqb::expression::ordering::Asc'>Asc</a>&lt;Self&gt; { ... }
+}</pre>
+            <h2 id='provided-methods'>Provided Methods</h2>
+            <div class='methods'>
+        <h3 id='method.aliased' class='method stab '><code>fn <a href='#method.aliased' class='fnname'>aliased</a>&lt;'a&gt;(self, alias: &amp;'a <a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../../../../yaqb/expression/aliased/struct.Aliased.html' title='yaqb::expression::aliased::Aliased'>Aliased</a>&lt;'a, Self&gt;</code></h3><h3 id='method.eq' class='method stab '><code>fn <a href='#method.eq' class='fnname'>eq</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Eq.html' title='yaqb::expression::predicates::Eq'>Eq</a>&lt;Self, T::Expression&gt;</code></h3><h3 id='method.ne' class='method stab '><code>fn <a href='#method.ne' class='fnname'>ne</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.NotEq.html' title='yaqb::expression::predicates::NotEq'>NotEq</a>&lt;Self, T::Expression&gt;</code></h3><h3 id='method.gt' class='method stab '><code>fn <a href='#method.gt' class='fnname'>gt</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Gt.html' title='yaqb::expression::predicates::Gt'>Gt</a>&lt;Self, T::Expression&gt;</code></h3><h3 id='method.ge' class='method stab '><code>fn <a href='#method.ge' class='fnname'>ge</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.GtEq.html' title='yaqb::expression::predicates::GtEq'>GtEq</a>&lt;Self, T::Expression&gt;</code></h3><h3 id='method.lt' class='method stab '><code>fn <a href='#method.lt' class='fnname'>lt</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Lt.html' title='yaqb::expression::predicates::Lt'>Lt</a>&lt;Self, T::Expression&gt;</code></h3><h3 id='method.le' class='method stab '><code>fn <a href='#method.le' class='fnname'>le</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: T) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.LtEq.html' title='yaqb::expression::predicates::LtEq'>LtEq</a>&lt;Self, T::Expression&gt;</code></h3><h3 id='method.between' class='method stab '><code>fn <a href='#method.between' class='fnname'>between</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;T&gt;) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.Between.html' title='yaqb::expression::predicates::Between'>Between</a>&lt;Self, <a class='struct' href='../../../../yaqb/expression/predicates/struct.And.html' title='yaqb::expression::predicates::And'>And</a>&lt;T::Expression, T::Expression&gt;&gt;</code></h3><h3 id='method.not_between' class='method stab '><code>fn <a href='#method.not_between' class='fnname'>not_between</a>&lt;T: <a class='trait' href='../../../../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;Self::<a class='trait' href='../../../../yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.html' title='yaqb::expression::expression_methods::global_expression_methods::ExpressionMethods'>SqlType</a>&gt;&gt;(self, other: <a class='struct' href='https://doc.rust-lang.org/nightly/core/ops/struct.Range.html' title='core::ops::Range'>Range</a>&lt;T&gt;) -&gt; <a class='struct' href='../../../../yaqb/expression/predicates/struct.NotBetween.html' title='yaqb::expression::predicates::NotBetween'>NotBetween</a>&lt;Self, <a class='struct' href='../../../../yaqb/expression/predicates/struct.And.html' title='yaqb::expression::predicates::And'>And</a>&lt;T::Expression, T::Expression&gt;&gt;</code></h3><h3 id='method.desc' class='method stab '><code>fn <a href='#method.desc' class='fnname'>desc</a>(self) -&gt; <a class='struct' href='../../../../yaqb/expression/ordering/struct.Desc.html' title='yaqb::expression::ordering::Desc'>Desc</a>&lt;Self&gt;</code></h3><h3 id='method.asc' class='method stab '><code>fn <a href='#method.asc' class='fnname'>asc</a>(self) -&gt; <a class='struct' href='../../../../yaqb/expression/ordering/struct.Asc.html' title='yaqb::expression::ordering::Asc'>Asc</a>&lt;Self&gt;</code></h3></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    </ul><script type="text/javascript" async
+                              src="../../../../implementors/yaqb/expression/expression_methods/global_expression_methods/trait.ExpressionMethods.js">
+                      </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "yaqb";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../../jquery.js"></script>
+    <script src="../../../../main.js"></script>
+    
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

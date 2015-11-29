@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `UpdateStatement` struct in crate `yaqb`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, UpdateStatement">
+
+    <title>yaqb::query_builder::update_statement::UpdateStatement - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='../../index.html'>yaqb</a>::<wbr><a href='../index.html'>query_builder</a>::<wbr><a href='index.html'>update_statement</a></p><script>window.sidebarCurrent = {name: 'UpdateStatement', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../../index.html'>yaqb</a>::<wbr><a href='../index.html'>query_builder</a>::<wbr><a href='index.html'>update_statement</a>::<wbr><a class='struct' href=''>UpdateStatement</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-8612' class='srclink' href='../../../src/yaqb/query_builder/update_statement/mod.rs.html#32-35' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct UpdateStatement&lt;T, U&gt; {
+    // some fields omitted
+}</pre><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl&lt;T, U&gt; <a class='trait' href='../../../yaqb/query_builder/trait.QueryFragment.html' title='yaqb::query_builder::QueryFragment'>QueryFragment</a> for <a class='struct' href='../../../yaqb/query_builder/update_statement/struct.UpdateStatement.html' title='yaqb::query_builder::update_statement::UpdateStatement'>UpdateStatement</a>&lt;T, U&gt; <span class='where'>where T: <a class='trait' href='../../../yaqb/query_builder/update_statement/target/trait.UpdateTarget.html' title='yaqb::query_builder::update_statement::target::UpdateTarget'>UpdateTarget</a>, U: <a class='trait' href='../../../yaqb/query_builder/update_statement/changeset/trait.Changeset.html' title='yaqb::query_builder::update_statement::changeset::Changeset'>Changeset</a>&lt;Target=T::Table&gt;</span></code></h3><div class='impl-items'><h4 id='method.to_sql' class='method'><code>fn <a href='../../../yaqb/query_builder/trait.QueryFragment.html#method.to_sql' class='fnname'>to_sql</a>(&amp;self, out: &amp;mut <a class='trait' href='../../../yaqb/query_builder/trait.QueryBuilder.html' title='yaqb::query_builder::QueryBuilder'>QueryBuilder</a>) -&gt; <a class='type' href='../../../yaqb/query_builder/type.BuildQueryResult.html' title='yaqb::query_builder::BuildQueryResult'>BuildQueryResult</a></code></h4>
+</div><h3 class='impl'><code>impl&lt;T, U&gt; <a class='trait' href='../../../yaqb/query_builder/trait.AsQuery.html' title='yaqb::query_builder::AsQuery'>AsQuery</a> for <a class='struct' href='../../../yaqb/query_builder/update_statement/struct.UpdateStatement.html' title='yaqb::query_builder::update_statement::UpdateStatement'>UpdateStatement</a>&lt;T, U&gt; <span class='where'>where <a class='struct' href='../../../yaqb/query_builder/update_statement/struct.UpdateQuery.html' title='yaqb::query_builder::update_statement::UpdateQuery'>UpdateQuery</a>&lt;T, U&gt;: <a class='trait' href='../../../yaqb/query_builder/trait.Query.html' title='yaqb::query_builder::Query'>Query</a></span></code></h3><div class='impl-items'><h4 id='assoc_type.SqlType' class='type'><code>type SqlType = Self::<a class='trait' href='../../../yaqb/query_builder/trait.AsQuery.html' title='yaqb::query_builder::AsQuery'>Query</a>::SqlType</code></h4>
+<h4 id='assoc_type.Query' class='type'><code>type Query = <a class='struct' href='../../../yaqb/query_builder/update_statement/struct.UpdateQuery.html' title='yaqb::query_builder::update_statement::UpdateQuery'>UpdateQuery</a>&lt;T, U&gt;</code></h4>
+<h4 id='method.as_query' class='method'><code>fn <a href='../../../yaqb/query_builder/trait.AsQuery.html#method.as_query' class='fnname'>as_query</a>(self) -&gt; Self::<a class='trait' href='../../../yaqb/query_builder/trait.AsQuery.html' title='yaqb::query_builder::AsQuery'>Query</a></code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "yaqb";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../../../jquery.js"></script>
+    <script src="../../../main.js"></script>
+    
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

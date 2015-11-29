@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["InsertValues",""]],"trait":[["Insertable",""],["InsertableColumns",""]]});

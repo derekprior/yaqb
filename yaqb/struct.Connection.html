@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Connection` struct in crate `yaqb`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Connection">
+
+    <title>yaqb::Connection - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>yaqb</a></p><script>window.sidebarCurrent = {name: 'Connection', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>yaqb</a>::<wbr><a class='struct' href=''>Connection</a></span><span class='out-of-band'><span id='render-detail'>
+            <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                [<span class='inner'>&#x2212;</span>]
+            </a>
+        </span><a id='src-7806' class='srclink' href='../src/yaqb/connection/mod.rs.html#26-29' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct Connection {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><code>impl <a class='struct' href='../yaqb/struct.Connection.html' title='yaqb::Connection'>Connection</a></code></h3><div class='impl-items'><h4 id='method.establish' class='method'><code>fn <a href='#method.establish' class='fnname'>establish</a>(database_url: &amp;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='type' href='../yaqb/result/type.ConnectionResult.html' title='yaqb::result::ConnectionResult'>ConnectionResult</a>&lt;<a class='struct' href='../yaqb/struct.Connection.html' title='yaqb::Connection'>Connection</a>&gt;</code></h4>
+<div class='docblock'><p>Establishes a new connection to the database at the given URL. The URL
+should be a PostgreSQL connection string, as documented at
+<a href="http://www.postgresql.org/docs/9.4/static/libpq-connect.html#LIBPQ-CONNSTRING">http://www.postgresql.org/docs/9.4/static/libpq-connect.html#LIBPQ-CONNSTRING</a></p>
+</div><h4 id='method.transaction' class='method'><code>fn <a href='#method.transaction' class='fnname'>transaction</a>&lt;T, E, F&gt;(&amp;self, f: F) -&gt; <a class='type' href='../yaqb/result/type.TransactionResult.html' title='yaqb::result::TransactionResult'>TransactionResult</a>&lt;T, E&gt; <span class='where'>where F: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.FnOnce.html' title='core::ops::FnOnce'>FnOnce</a>() -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;T, E&gt;</span></code></h4>
+<div class='docblock'><p>Executes the given function inside of a database transaction. When
+a transaction is already occurring,
+<a href="http://www.postgresql.org/docs/9.1/static/sql-savepoint.html">savepoints</a>
+will be used to emulate a nested transaction.</p>
+
+<p>If the function returns an <code>Ok</code>, that value will be returned.  If the
+function returns an <code>Err</code>,
+<a href="result/enum.TransactionError.html#variant.UserReturnedError"><code>TransactionError::UserReturnedError</code></a>
+will be returned wrapping that value.</p>
+</div><h4 id='method.begin_test_transaction' class='method'><code>fn <a href='#method.begin_test_transaction' class='fnname'>begin_test_transaction</a>(&amp;self) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt;</code></h4>
+<div class='docblock'><p>Creates a transaction that will never be committed. This is useful for
+tests. Panics if called while inside of a transaction.</p>
+</div><h4 id='method.test_transaction' class='method'><code>fn <a href='#method.test_transaction' class='fnname'>test_transaction</a>&lt;T, E, F&gt;(&amp;self, f: F) -&gt; T <span class='where'>where F: <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.FnOnce.html' title='core::ops::FnOnce'>FnOnce</a>() -&gt; <a class='enum' href='https://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;T, E&gt;</span></code></h4>
+<div class='docblock'><p>Executes the given function inside a transaction, but does not commit
+it. Panics if the given function returns an <code>Err</code>.</p>
+</div><h4 id='method.query_one' class='method'><code>fn <a href='#method.query_one' class='fnname'>query_one</a>&lt;T, U&gt;(&amp;self, source: T) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;U&gt;&gt; <span class='where'>where T: <a class='trait' href='../yaqb/query_builder/trait.AsQuery.html' title='yaqb::query_builder::AsQuery'>AsQuery</a>, U: <a class='trait' href='../yaqb/query_source/trait.Queriable.html' title='yaqb::query_source::Queriable'>Queriable</a>&lt;T::SqlType&gt;</span></code></h4>
+<div class='docblock'><p>Executes the given query, returning a single value. Identical to
+<code>source.first(&amp;connection)</code>. See <a href="trait.LoadDsl.html#method.first">the documentation for
+<code>first</code></a> for more.</p>
+</div><h4 id='method.query_all' class='method'><code>fn <a href='#method.query_all' class='fnname'>query_all</a>&lt;T, U&gt;(&amp;self, source: T) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='struct' href='../yaqb/struct.Cursor.html' title='yaqb::Cursor'>Cursor</a>&lt;T::SqlType, U&gt;&gt; <span class='where'>where T: <a class='trait' href='../yaqb/query_builder/trait.AsQuery.html' title='yaqb::query_builder::AsQuery'>AsQuery</a>, U: <a class='trait' href='../yaqb/query_source/trait.Queriable.html' title='yaqb::query_source::Queriable'>Queriable</a>&lt;T::SqlType&gt;</span></code></h4>
+<div class='docblock'><p>Executes the given query, returning an <code>Iterator</code> over the returned
+rows. Identical to <code>source.load(&amp;connection)</code>. See <a href="trait.LoadDsl.html#method.load">the documentation
+for <code>load</code></a> for more.</p>
+</div><h4 id='method.find' class='method'><code>fn <a href='#method.find' class='fnname'>find</a>&lt;T, U, PK&gt;(&amp;self, source: T, id: PK) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='enum' href='https://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;U&gt;&gt; <span class='where'>where T: <a class='trait' href='../yaqb/query_source/trait.Table.html' title='yaqb::query_source::Table'>Table</a> + <a class='trait' href='../yaqb/trait.FilterDsl.html' title='yaqb::FilterDsl'>FilterDsl</a>&lt;FindPredicate&lt;T, PK&gt;&gt;, <a class='type' href='../yaqb/helper_types/type.FindBy.html' title='yaqb::helper_types::FindBy'>FindBy</a>&lt;T, T::PrimaryKey, PK&gt;: <a class='trait' href='../yaqb/trait.LimitDsl.html' title='yaqb::LimitDsl'>LimitDsl</a>, U: <a class='trait' href='../yaqb/query_source/trait.Queriable.html' title='yaqb::query_source::Queriable'>Queriable</a>&lt;<a class='type' href='../yaqb/helper_types/type.Limit.html' title='yaqb::helper_types::Limit'>Limit</a>&lt;<a class='type' href='../yaqb/helper_types/type.FindBy.html' title='yaqb::helper_types::FindBy'>FindBy</a>&lt;T, T::PrimaryKey, PK&gt;&gt;::SqlType&gt;, PK: <a class='trait' href='../yaqb/expression/trait.AsExpression.html' title='yaqb::expression::AsExpression'>AsExpression</a>&lt;PkType&lt;T&gt;&gt;, <a class='type' href='../yaqb/expression/helper_types/type.AsExpr.html' title='yaqb::expression::helper_types::AsExpr'>AsExpr</a>&lt;PK, T::PrimaryKey&gt;: <a class='trait' href='../yaqb/expression/trait.NonAggregate.html' title='yaqb::expression::NonAggregate'>NonAggregate</a></span></code></h4>
+<div class='docblock'><p>Attempts to find a single record from the given table by primary key.</p>
+
+<h1 id='example' class='section-header'><a href='#example'>Example</a></h1><pre class='rust rust-example-rendered'>
+<span class='kw'>let</span> <span class='ident'>sean</span> <span class='op'>=</span> (<span class='number'>1</span>, <span class='string'>&quot;Sean&quot;</span>.<span class='ident'>to_string</span>());
+<span class='kw'>let</span> <span class='ident'>tess</span> <span class='op'>=</span> (<span class='number'>2</span>, <span class='string'>&quot;Tess&quot;</span>.<span class='ident'>to_string</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='prelude-val'>Some</span>(<span class='ident'>sean</span>), <span class='ident'>connection</span>.<span class='ident'>find</span>(<span class='ident'>users</span>, <span class='number'>1</span>).<span class='ident'>unwrap</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='prelude-val'>Some</span>(<span class='ident'>tess</span>), <span class='ident'>connection</span>.<span class='ident'>find</span>(<span class='ident'>users</span>, <span class='number'>2</span>).<span class='ident'>unwrap</span>());
+<span class='macro'>assert_eq</span><span class='macro'>!</span>(<span class='prelude-val'>None</span>::<span class='op'>&lt;</span>(<span class='ident'>i32</span>, <span class='ident'>String</span>)<span class='op'>&gt;</span>, <span class='ident'>connection</span>.<span class='ident'>find</span>(<span class='ident'>users</span>, <span class='number'>3</span>).<span class='ident'>unwrap</span>());</pre>
+</div><h4 id='method.insert' class='method'><code>fn <a href='#method.insert' class='fnname'>insert</a>&lt;T, U, Out&gt;(&amp;self, _source: &amp;T, records: U) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='struct' href='../yaqb/struct.Cursor.html' title='yaqb::Cursor'>Cursor</a>&lt;T::AllColumns::SqlType, Out&gt;&gt; <span class='where'>where T: <a class='trait' href='../yaqb/query_source/trait.Table.html' title='yaqb::query_source::Table'>Table</a>, U: <a class='trait' href='../yaqb/persistable/trait.Insertable.html' title='yaqb::persistable::Insertable'>Insertable</a>&lt;T&gt;, Out: <a class='trait' href='../yaqb/query_source/trait.Queriable.html' title='yaqb::query_source::Queriable'>Queriable</a>&lt;T::AllColumns::SqlType&gt;</span></code></h4>
+<div class='docblock'><p>Inserts new records in the database, and returns an <code>Iterator</code> of models
+created from the inserted rows. If you do not want to use the returned
+models, you should call <a href="#method.insert_returning_count"><code>insert_returning_count</code></a>
+instead.</p>
+</div><h4 id='method.insert_returning_count' class='method'><code>fn <a href='#method.insert_returning_count' class='fnname'>insert_returning_count</a>&lt;T, U&gt;(&amp;self, _source: &amp;T, records: U) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; <span class='where'>where T: <a class='trait' href='../yaqb/query_source/trait.Table.html' title='yaqb::query_source::Table'>Table</a>, U: <a class='trait' href='../yaqb/persistable/trait.Insertable.html' title='yaqb::persistable::Insertable'>Insertable</a>&lt;T&gt;</span></code></h4>
+<div class='docblock'><p>Inserts new records into the database, returning the number of rows that
+were saved.</p>
+</div><h4 id='method.execute_returning_count' class='method'><code>fn <a href='#method.execute_returning_count' class='fnname'>execute_returning_count</a>&lt;T&gt;(&amp;self, source: &amp;T) -&gt; <a class='type' href='../yaqb/result/type.QueryResult.html' title='yaqb::result::QueryResult'>QueryResult</a>&lt;<a class='primitive' href='https://doc.rust-lang.org/nightly/std/primitive.usize.html'>usize</a>&gt; <span class='where'>where T: <a class='trait' href='../yaqb/query_builder/trait.QueryFragment.html' title='yaqb::query_builder::QueryFragment'>QueryFragment</a></span></code></h4>
+<div class='docblock'><p>Executes the given command, returning the number of rows affected. Used
+in conjunction with
+<a href="../query_builder/fn.update.html"><code>update</code></a> and
+<a href="../query_builder/fn.delete.html"><code>delete</code></a></p>
+</div></div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><code>impl <a class='trait' href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html' title='core::ops::Drop'>Drop</a> for <a class='struct' href='../yaqb/struct.Connection.html' title='yaqb::Connection'>Connection</a></code></h3><div class='impl-items'><h4 id='method.drop' class='method'><code>fn <a href='https://doc.rust-lang.org/nightly/core/ops/trait.Drop.html#method.drop' class='fnname'>drop</a>(&amp;mut self)</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "yaqb";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script defer src="../search-index.js"></script>
+</body>
+</html>

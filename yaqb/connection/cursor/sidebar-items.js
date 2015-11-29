@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["Cursor","The type returned by various `Connection` methods. Acts as an iterator over `T`."]]});

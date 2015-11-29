@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["delete",""],["update",""]],"mod":[["update_statement",""]],"trait":[["AsQuery",""],["Query",""],["QueryBuilder",""],["QueryFragment",""]],"type":[["Binds",""],["BuildQueryResult",""]]});
